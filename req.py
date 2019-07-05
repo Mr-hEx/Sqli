@@ -27,7 +27,7 @@ def findPassword():
                  print ('Current password evaluation:' + password) 
 
            
-
+print("\n \n \n let's find the Password character\n \n \n ")
 findPassChars()
 print("\n character password contents : " + passwordChars)
 print("\n \n \n Now let's find the Password \n \n \n ")
@@ -37,6 +37,3 @@ print("\n \n \n  Password is : " + password)
 
 
 
-
-#r = requests.get('http://0xhex.org/sqli/index.php?username=hex')
-#print(r.text)
